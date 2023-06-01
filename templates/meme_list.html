@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+<div class="row">
+{% for meme in memes %}
+<div class="col-sm-4">
+  <div class="card m-2 ">
+    <img src="{{ meme.image.url }}" alt="{{ meme.name }}" class="card-img-top"  >
+    <div class="card-footer">
+      <small class="text-muted"><h3>{{ meme.name }}</h3>
+    <p>{{ meme.description }}</p>
+    <p>Posted on: {{ meme.timestamp }}</p>
+  </small>
+</div>
+</div>
+</div>
+{% empty %}
+  <p>No memes found.</p>
+{% endfor %}
+</div>
+</div>
+{% endblock content %}
+
+
+
+
