@@ -12,10 +12,18 @@
      <form action="" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{form}}
-      <input type="submit" class="btn btn-danger" value="Upload">
+      
+      <input type="submit" class="btn btn-danger" value="Upload"><br>
+      <textarea placeholder="Type your caption here...."></textarea>
      </form>
-    </div>
-
+    </div>  
+    <style>
+      textarea{
+        margin:1em 0;
+        width:56%;
+        height:100px;
+      }
+    </style>
   {% endblock content %}
 
   
