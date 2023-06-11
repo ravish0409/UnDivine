@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% comment %} {% for meme in memes %}
+<div>
+    <h3>{{ meme.name }}</h3>
+    <p>{{ meme.description }}</p>
+    <img src="{{ meme.image1.url }}" alt="Image 1">
+    <img src="{{ meme.image2.url }}" alt="Image 2">
+</div>
+{% endfor %} {% endcomment %}
+
+<div class="container">
+    <div class="container-fluid m-0 w-100">
+        <div class="image-container d-flex flex-wrap justify-content-lg-between">
+            {% for meme in memes %}
+            <div class="card-group group mb-2">
+                <div class="card margin">
+                    <img src="{{ meme.image1.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ meme.name }}</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">{{ meme.timestamp }}</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="{{ meme.image2.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ meme.name }}</h5>
+                                <p class="card-text">{{ meme.description }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">{{ meme.timestamp }}</small>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p>No memes found.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+    {% endblock content %}
